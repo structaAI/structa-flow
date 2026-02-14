@@ -1,0 +1,35 @@
+# DummyPT Reasoning Model Config
+
+# Model Configs
+model:
+  type: decoder
+  vocab_size: 32000
+  hidden_size: 1024
+  num_layers: 28
+  num_attention_heads: 32
+  num_query_groups: 8
+  max_position_embeddings: 2048
+  rotary_embeddings: true
+  norm_type: rmsnorm
+  noem_eps: 1e-5
+  ffn_hidden_size: 4096
+  activation_function: swiglu
+  dropout: 0.1
+  initializer_range: 0.02
+
+# Training Configs
+training:
+  optimizer: adamw
+  learning_rate: 3e-4
+  weight_decay: 0.1
+  betas: [0.9, 0.95]
+  warmup_steps: 2000
+  lr_scheduler: cosine
+  gradient_clipping: 1.0
+  batch_size: 512
+  micro_batch_size: 16
+  max_steps: 200000
+  eval_interval: 1000
+  save_interval: 5000
+  seed: 42
+  mixed_precision: bf16
