@@ -20,4 +20,4 @@ class AdaptiveThinkingGate(nn.Module):
 
     should_think: bool = bool(thinking_prob[0].item() > 0.5)
 
-    return should_think, thinking_prob
+    return  should_think, thinking_prob
