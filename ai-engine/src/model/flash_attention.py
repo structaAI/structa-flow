@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
-from typing import Optional, Any
+from typing import Any
 import math
 
 class FlashAttention(nn.Module):
