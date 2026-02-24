@@ -15,7 +15,6 @@ class RMSNorm(nn.Module):
   def forward(self, x: Tensor)-> Tensor:
     output_dtype = x.dtype
         
-    x_fp32 = x.to(torch.float32)
-    norm_x = self._norm(x_fp32)
+    norm_x = self._norm(x.to(torch.float32))
 
     return (norm_x.to(output_dtype) * self.weight)
